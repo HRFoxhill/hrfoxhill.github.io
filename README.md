@@ -1,2 +1,2 @@
-# hrfoxhill.github.io
-Github pages repository
+# unit-4-game
+dynamic jquery game

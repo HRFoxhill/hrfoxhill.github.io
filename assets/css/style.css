@@ -1,0 +1,106 @@
+
+
+.burst-81 {
+    background: linear-gradient(124deg, darkred, #ff2400, #e81d1d, #e8b71d, #e81d1d, #ff2400, darkred);
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 20px;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+       -moz-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+         -o-transform: rotate(20eg);
+}
+.burst-81:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    background: linear-gradient(124deg, darkred, #ff2400, #e81d1d, #e8b71d, #e81d1d, #ff2400, darkred);
+    -webkit-transform: rotate(135deg);
+       -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+         -o-transform: rotate(135deg);
+}
+
+.burst-84 {
+    background: linear-gradient(124deg, darkgreen, #1de840, #1ddde8, #1de840, darkgreen);
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 20px;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+       -moz-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+         -o-transform: rotate(20eg);
+}
+.burst-84:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    background: linear-gradient(124deg, darkgreen, #1de840, #1ddde8, #1de840, darkgreen);
+    -webkit-transform: rotate(135deg);
+       -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+         -o-transform: rotate(135deg);
+}
+
+.burst-82 {
+    background: linear-gradient(124deg, darkblue, #2b1de8, #1ddde8, #2b1de8, #1ddde8, darkblue);
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 20px;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+       -moz-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+         -o-transform: rotate(20eg);
+}
+.burst-82:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    background: linear-gradient(124deg, darkblue, #2b1de8, #1ddde8, #2b1de8, #1ddde8, darkblue);
+    -webkit-transform: rotate(135deg);
+       -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+         -o-transform: rotate(135deg);
+}
+
+.burst-83 {
+    background: linear-gradient(124deg, purple, #dd00f3, rgb(221, 162, 221), #dd00f3, purple);
+    width: 80px;
+    height: 80px;
+    position: relative;
+    margin: 20px;
+    text-align: center;
+    -webkit-transform: rotate(20deg);
+       -moz-transform: rotate(20deg);
+        -ms-transform: rotate(20deg);
+         -o-transform: rotate(20eg);
+}
+.burst-83:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 80px;
+    background: linear-gradient(124deg, purple, #dd00f3, rgb(221, 162, 221), #dd00f3, purple);
+    -webkit-transform: rotate(135deg);
+       -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+         -o-transform: rotate(135deg);
+}
+

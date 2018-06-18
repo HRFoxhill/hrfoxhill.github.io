@@ -3,47 +3,45 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Heather Foxhill Portfolio</title>
+    <title>Crystal Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="bootstrap-portfolio/images.html">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
 </head>
-
 <body>
-<div class="wrapper">
-<div class="topnav">
-  <a class="tabs" href="index.html">About</a>
-  <a class="tabs" href="portfolio.html">Portfolio</a>
-  <a class="tabs" href="contact.html">Contact</a>
-  <a class= "name" href="https://www.heatherrfoxhill.com">Heather Foxhill</a>
+    <h1>Crystals-Collector-Game!</h1>
+
+<h2 >Rules of the Game</h2>
+    <p>You will be given a random number at the start of the game.  There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.  You win the game by matching your total score to the ramdom number, you lose the game if your total score goes above the random number.</p>
+    <p>The value of each crystal is hidden from you until you click on it.  Each time when the game starts, the game will change the values of each crystal.</p>
+<br>
+<div class="row, container">
+    <h3 class="col-sm-3"></h3>
+    <h3 class="col-sm-3">Target Score: 
+        <span id='targetScore'>0</span>
+  </h3>
+    <h3 class="col-sm-2 ">Your Score: <span id='yourScore'>0</span>
+  </h3>
+
+  <br>
+  
+<div class="buttons">
+    <button class="burst-81" id="red" >Red</button>
+    <button class="burst-82" id="blue" >Blue</button>
+    <button class="burst-83" id="purple" >Purple</button>
+    <button class="burst-84" id="green" >Green</button>
 </div>
 
-<div class="container">
-    <div class="row">
-      <div class="col-md-9">
-        <h2>About Me</h2>  
-        <hr>
-       <img class="wedding" src="images.html/wedding1.JPG"/img>
-        <p> Hi, a little about me. I am a mom, pet mom, wife, roommate, auntie and friend. My life is busy and I love it. </p>
-          <br> </br> 
-        <p>I work in the evenings as a massage therapist and go to school during the day. My weekends are all about my son and our family and making the most of our time together.</p>
-          <br> </br>
-        <p>I am taking this class to learn more about and area of work that has touched my career but that I have yet to have the chance to interact with on a fulfilling and knowledgeable level. I hope to be able to take what I learn from this class and apply it to a new career with new learning and life opportunities.</p>
-      </div>
-    </div>
-</div>
 
-
-<div class="footer">
-  <p> Copyright Heather S Foxhill 2018</p>
-</div>
-</div>
-
-<!-- bootstrap below -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Bootstrap below -->
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
 </body>
 </html>
