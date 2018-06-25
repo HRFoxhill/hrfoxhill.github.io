@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nailed It</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/CSS/style.css" />
+  
+</head>
+<body>
+        <div class="container">
+                <h1>Goat Search</h1>
+            
+                 <!-- Rendered Buttons will get Dumped Here  -->
+                <div id="buttons-view"></div>
+            
+                <form id="topic-form">
+                  <label for="topic-input">Add a topic</label>
+                  <input type="text" id="topic-input"><br>
+            
+                  <!-- Button triggers new movie to be added -->
+                  <input id="add-topic" type="submit" value="Add a Topic">
+                </form>
+
+                <div id="gifs-appear-here"></div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+
+    
+
+        var topics = [ "paralyzed goats", "fainting goats", "screaming goats", "singing goats"]
+
+            //  Generic function for capturing the topic name from the data-attribute
+      function alertTopicName() {
+        var topicName = $(this).attr("data-topic");
+
+        alert(topicName);
+      }
+      
+       // Function for displaying topic data
+       function renderButtons() {
+
+        // Deleting the topics prior to adding new topics
+        // (this is necessary otherwise we will have repeat buttons)
+        $("#buttons-view").empty();
+
+        // Looping through the array of topics
+        for (var i = 0; i < topics.length; i++) {
+
+        // Then dynamicaly generating buttons for each topic in the array
+        // This code $("<button>") is all jQuery needs to create the start and end tag. (<button></button>)
+        var a = $("<button>");
+        // Adding a class of movie to our button
+        a.addClass("topics");
+        // Adding a data-attribute
+        a.attr("data-topic", topics[i]);
+        // Providing the initial button text
+        a.text(topics[i]);
+        // Adding the button to the HTML
+        $("#buttons-view").append(a);
+        }
+    }
+
+
+      // This function handles events where one button is clicked
+      $("#add-topic").on("click", function(event) {
+        // Preventing the buttons default behavior when clicked (which is submitting a form)
+        event.preventDefault();
+        // This line grabs the input from the textbox
+        var topic = $("#topic-input").val().trim();
+
+        // Adding the topic from the textbox to the array
+        topics.push(topic);
+
+        // Calling renderButtons which handles the processing of the topic array
+        renderButtons();
+
+      });
+      
+
+   // Function for displaying the topic info
+      // We're adding a click event listener to all elements with the class "topic"
+      // We're adding the event listener to the document because it will work for dynamically generated elements
+      // $(".topics").on("click") will only add listeners to elements that are on the page at that time
+      $(document).on("click", ".topic", alertTopicName);
+
+      // Calling the renderButtons function to display the intial buttons
+      renderButtons();
+
+
+ 
+      $("button").on("click", function() {
+
+        var topics = [ "paralyzed goats", "fainting goats", "screaming goats", "singing goats"]
+      
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+            topics + "&api_key=Z5IChgHgUf7P05DV4GQVkCywgnXoHg32&limit=10";
+    
+        // //   <!-Performing our AJAX GET request -->
+          $.ajax({
+            url: queryURL,
+            method: "GET"
+          })
+
+          // After the data comes back from the API
+        .then(function(response) {
+          // Storing an array of results in the results variable
+          var results = response.data;
+
+          // Looping over every result item
+          for (var i = 0; i < results.length; i++) {
+
+            // Only taking action if the photo has an appropriate rating
+            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+              // Creating a div with the class "item"
+              var gifDiv = $("<div class='item'>");
+
+              // Storing the result item's rating
+              var rating = results[i].rating;
+
+              // Creating a paragraph tag with the result item's rating
+              var p = $("<p>").text("Rating: " + rating);
+
+              // Creating an image tag
+              var topicImage = $("<img>");
+
+              // Giving the image tag an src attribute of a proprty pulled off the
+              // result item
+              topicImage.attr("src", results[i].images.fixed_height_still.url);
+              topicImage.attr("data-still", results[i].images.fixed_height_still.url);
+              topicImage.attr("data-animate", results[i].images.fixed_height.url);
+              
+              // Appending the paragraph and topicImage we created to the "gifDiv" div we created
+              gifDiv.append(p);
+              gifDiv.append(topicImage);
+
+              // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+              $("#gifs-appear-here").prepend(gifDiv);
+            }
+            
+            $(topicImage).on("click", function() {
+     
+                var state = $(this).attr("data-state");
+
+                if (state === "src") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                } else {
+                   $(this).attr("src", $(this).attr("data-still")); 
+                }
+       
+    })
+};
+});
+});
+
+    </script>
+</body>
+</html>
